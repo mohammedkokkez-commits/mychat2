@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>غرفة خاصة</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="chat-body">
+  <header class="chat-header">
+    <div class="chat-header-left">
+      <span class="mark-ring small"></span>
+      <span class="chat-username" id="me-username"></span>
+    </div>
+    <div class="chat-header-right">
+      <span class="lifetime-note">الرسائل تُحذف تلقائياً بعد <span id="lifetime-minutes">٣٠</span> دقيقة</span>
+      <button id="logout-btn" class="ghost-btn">خروج</button>
+    </div>
+  </header>
+
+  <main class="messages" id="messages" aria-live="polite"></main>
+
+  <form id="send-form" class="send-bar">
+    <input id="message-input" maxlength="2000" autocomplete="off" placeholder="اكتب رسالة…" required />
+    <button type="submit">إرسال</button>
+  </form>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/chat.js"></script>
+</body>
+</html>
