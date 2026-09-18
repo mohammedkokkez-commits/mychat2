@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>دخول — غرفة خاصة</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body class="auth-body">
+  <main class="auth-card">
+    <div class="auth-mark">
+      <span class="mark-ring"></span>
+    </div>
+    <h1>غرفة خاصة</h1>
+    <p class="auth-sub">محادثة بين شخصين فقط. الرسائل تختفي تلقائياً بعد ٣٠ دقيقة.</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab active" id="tab-login" role="tab" aria-selected="true">دخول</button>
+      <button class="tab" id="tab-register" role="tab" aria-selected="false">تسجيل حساب</button>
+    </div>
+
+    <form id="form-login" class="auth-form">
+      <label for="login-username">اسم المستخدم</label>
+      <input id="login-username" name="username" autocomplete="username" required maxlength="20" />
+      <label for="login-password">كلمة المرور</label>
+      <input id="login-password" name="password" type="password" autocomplete="current-password" required maxlength="200" />
+      <button type="submit">دخول</button>
+      <p class="auth-error" id="login-error" role="alert"></p>
+    </form>
+
+    <form id="form-register" class="auth-form hidden">
+      <label for="reg-username">اسم المستخدم</label>
+      <input id="reg-username" name="username" autocomplete="username" required maxlength="20" pattern="[a-zA-Z0-9_]{3,20}" />
+      <p class="hint">حروف إنجليزية وأرقام و _ فقط، من ٣ إلى ٢٠ حرف</p>
+      <label for="reg-password">كلمة المرور</label>
+      <input id="reg-password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="200" />
+      <p class="hint">٨ أحرف على الأقل</p>
+      <button type="submit">إنشاء الحساب</button>
+      <p class="auth-error" id="register-error" role="alert"></p>
+      <p class="auth-note">التسجيل يُقفل تلقائياً بعد إنشاء حسابين فقط.</p>
+    </form>
+  </main>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>
